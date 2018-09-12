@@ -2,6 +2,7 @@ import titles
 import os
 import abbreviation
 import logging
+import codecs
 
 
 """
@@ -80,6 +81,12 @@ class Book:
 
         def open_book(self, book, book_type):
             #open specific bible book if book does not exist loops main
+
+            #testing notes
+            book = "Genesis.txt"
+            #span_bible = open(book,"r")
+            #span_bible = codecs.open(book,"r", encoding = 'utf8') 
+            # span_bible_book= span_bible.read()
             try:
                 span_bible = open(book,"r")
                 span_bible_book= span_bible.read()
@@ -127,6 +134,7 @@ class Book:
             else:
                 main(book_type)
 
+
 """
 ----------------------------------------------------------------------Select Version---------------------------------------------------------------
 this section assign oustide variables of book
@@ -144,6 +152,7 @@ elif version == "2":
     Reina_Valera = Book("", "", 0000, "God", "KJV", "./RSV")
 
 
+
 # original instance assignments
 # Holy_book = Book("holy Bible", 1, 0000, "God", "KJV", "./b")
 # Reina_Valera = Book("", "", 1909, "Cipriano de Valera", "Reina-Valera", "./b")
@@ -152,5 +161,7 @@ elif version == "2":
 # Reina_Valera = Book(bookver, vernum, datepub, bibauth, bibtitle, biblocation)
 
 
-os.chdir(Reina_Valera.bookloc) 
+dir_loc = Reina_Valera.bookloc
+# os.chdir(Reina_Valera.bookloc)
+os.chdir(dir_loc)
 main(Reina_Valera.bookloc)

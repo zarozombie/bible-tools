@@ -29,6 +29,7 @@ def main(book_type):
         book_abrev = input("Please Enter book Name:")  
         #user types book name
         book_name = abbreviation.shorthand(book_abrev)
+        #print(book_name)
         #see if user wants to exit program        
         if book_name == 'q':
             done = True
@@ -47,6 +48,7 @@ def main(book_type):
 
                 Reina_Valera = Book(book_name, verse, "", "", "", "")
                 book = Reina_Valera.format_book()                                                      #add .txt to end of file
+                #print(book)
                 spanish_bible = Reina_Valera.open_book(book, book_type)                                           #open file in string
                 index = Reina_Valera.create_verse_index()                                              #crate verse index
                 verse_index = Reina_Valera.index_verse(spanish_bible, index[0], index[1])              #index verse
@@ -80,13 +82,10 @@ class Book:
             # print(self.book)
 
         def open_book(self, book, book_type):
-            #open specific bible book if book does not exist loops main
-
-            #testing notes
-            book = "Genesis.txt"
-            #span_bible = open(book,"r")
-            #span_bible = codecs.open(book,"r", encoding = 'utf8') 
-            # span_bible_book= span_bible.read()
+            #open specific bible book if book does not exist loops main                   
+            span_bible = open(book,"r")
+            span_bible = codecs.open(book,"r", encoding = 'utf8') 
+            span_bible_book= span_bible.read()
             try:
                 span_bible = open(book,"r")
                 span_bible_book= span_bible.read()
@@ -160,8 +159,8 @@ elif version == "2":
 # instance assignmet with variable names for arguments
 # Reina_Valera = Book(bookver, vernum, datepub, bibauth, bibtitle, biblocation)
 
+#print(Reina_Valera)
 
 dir_loc = Reina_Valera.bookloc
-# os.chdir(Reina_Valera.bookloc)
 os.chdir(dir_loc)
 main(Reina_Valera.bookloc)

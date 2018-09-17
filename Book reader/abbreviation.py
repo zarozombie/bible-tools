@@ -27,7 +27,7 @@ def shorthand(short):
         return "1 Timothy"
     if short == "2 chronicles":
         return"2 Chronicles"
-    if short == "2 corinthians":
+    if short == "2 corinthians" or short == "2co":
         return"2 Corinthians"
     if short == "2 john":
         return "2 John"
@@ -107,7 +107,7 @@ def shorthand(short):
         return "Nahum"
     if short == "nehemiah":
         return "Nehemiah"
-    if short == "numbers":
+    if short == "numbers" or short == "num":
         return "Numbers"
     if short == "obadiah":
         return "Obadiah"
@@ -124,17 +124,21 @@ def shorthand(short):
     if short == "romans":
         return "Romans"
     if short == "ruth":
-        return "Ruth"
+        return "Ruth"    
+    if short == "sirach" or short == "sir":
+        return "Sirach"
     if short == "song" or short == "song of solomon":
         return "Song of Solomon"
     if short == "tit" or short == "titus":
         return "Titus"
+    if short == "tob" or short == "tobit": 
+        return "Tobit"
     if short == "zechariah":
         return "Zechariah"
     if short == "zephaniah":
         return "Zephaniah"
     else:
-        return "a"
+        return "book or abrev not found!"
 
 
 # x = "zephaniah"

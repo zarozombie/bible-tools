@@ -11,7 +11,7 @@ def shorthand(short):
         return "Matthew"
     if short == "1chr" or short == "1 chronicles":
         return"1 Chronicles"
-    if short == "1cor" or short == "1 co" or short == "1 corinthians" :
+    if short == "1cor" or short == "1 co" or short == "1co" or short == "1 corinthians" :
         return"1 Corinthians"
     if short == "1 joh" or short == "1 john" or short == "1jn" or short == "1 jn":
         return "1 John"
@@ -19,13 +19,13 @@ def shorthand(short):
         return "1 Kings"
     if short == "1 pe" or short == "1pe" or short == "1 peter":
         return "1 Peter"
-    if short == "1 samuel":
+    if short == "1 samuel" or short == "1sa" or short == "1 sa":
         return"1 Samuel"
     if short == "1 thessalonians":
         return "1 Thessalonians"
     if short == "1 timothy":
         return "1 Timothy"
-    if short == "2 chronicles":
+    if short == "2 chronicles" or short == "2ch":
         return"2 Chronicles"
     if short == "2 corinthians" or short == "2co":
         return"2 Corinthians"
@@ -69,13 +69,13 @@ def shorthand(short):
         return "Galatians"
     if short == "habakkuk":
         return "Habakkuk"
-    if short == "haggai":
+    if short == "haggai" or short == "hag":
         return "Haggai"
     if short == "hebrews" or short == "heb":
         return "Hebrews"
     if short == "hos" or short == "hosea":
         return "Hosea"
-    if short == "james":
+    if short == "james" or short == "jas":
         return "James"
     if short == "jer" or short == "jeremiah":
         return "Jeremiah"
@@ -83,15 +83,15 @@ def shorthand(short):
         return "Job"
     if short == "joe" or short == "joel":
         return "Joel"
-    if short == "jon" or short == "john":
+    if short == "jon" or short == "joh" or short == "john":
         return "John"
-    if short == "joh" or short == "jonah":
+    if short == "jonah":
         return "Jonah"
     if short == "jos" or short == "joshua":
         return "Joshua"
-    if short == "jude":
+    if short == "jude" or short == "jud":
         return "Jude"
-    if short == "judges":
+    if short == "judges" or short == "jdg":
         return "Judges"
     if short == "lamentations":
         return "Lamentations"
@@ -99,7 +99,7 @@ def shorthand(short):
         return "Leviticus"
     if short == "malachi":
         return "Malachi"
-    if short == "mark":
+    if short == "mark" or short == "mar":
         return "Mark"
     if short == "micah":
         return "Micah"
@@ -115,7 +115,7 @@ def shorthand(short):
         return "Philemon"
     if short == "php" or short == "philippians":
         return "Philippians"
-    if short == "proverbs":
+    if short == "proverbs" or short == "pro":
         return "Proverbs"
     if short == "psa" or short == "paslms":
         return "Psalms"
@@ -127,7 +127,7 @@ def shorthand(short):
         return "Ruth"    
     if short == "sirach" or short == "sir":
         return "Sirach"
-    if short == "song" or short == "song of solomon":
+    if short == "song" or short == "song of solomon" or short == "son":
         return "Song of Solomon"
     if short == "tit" or short == "titus":
         return "Titus"

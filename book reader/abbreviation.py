@@ -1,7 +1,8 @@
-# abbreviation
+#
+abbreviation
 
 def shorthand(short):
-    if short == "isa" or short == "isaiah":
+    if short == "isa"    or short == "isaiah":
         return"Isaiah"
     if short == "gen" or short == "genesis":
         return"Genesis"

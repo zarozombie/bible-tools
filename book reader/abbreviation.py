@@ -1,5 +1,4 @@
-#
-abbreviation
+#abbreviation
 
 def shorthand(short):
     if short == "isa"    or short == "isaiah":

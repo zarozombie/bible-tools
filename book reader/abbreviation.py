@@ -37,7 +37,7 @@ def shorthand(short):
         return "2 Peter"
     if short == "2 sam" or short == "2 samuel" or short == "2sam" or short == "2sa" or short == "2 sa":
         return "2 Samuel"        
-    if short == "2 thessalonians":
+    if short == "2 thessalonians" or short == "2th" or short == "2 th":
         return "2 Thessalonians"
     if short == "2 ti" or short == "2 timothy":
         return "2 Timothy"
@@ -65,7 +65,7 @@ def shorthand(short):
         return "Ezekiel"
     if short == "ezra":
         return "Ezra"
-    if short == "galatian":
+    if short == "galatian" or short == "gal":
         return "Galatians"
     if short == "habakkuk":
         return "Habakkuk"
@@ -93,7 +93,7 @@ def shorthand(short):
         return "Jude"
     if short == "judges" or short == "jdg":
         return "Judges"
-    if short == "lamentations":
+    if short == "lamentations" or short == "lam":
         return "Lamentations"
     if short == "lev" or short == "leviticus":
         return "Leviticus"
@@ -133,7 +133,7 @@ def shorthand(short):
         return "Titus"
     if short == "tob" or short == "tobit": 
         return "Tobit"
-    if short == "zechariah":
+    if short == "zechariah" or short == "zec":
         return "Zechariah"
     if short == "zephaniah":
         return "Zephaniah"

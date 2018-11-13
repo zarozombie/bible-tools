@@ -61,7 +61,7 @@ def shorthand(short):
         return "Esther"
     if short == "exo" or short == "exodus":
         return "Exodus"
-    if short == "ezekiel":
+    if short == "ezekiel" or short == "eze":
         return "Ezekiel"
     if short == "ezra":
         return "Ezra"
@@ -97,7 +97,7 @@ def shorthand(short):
         return "Lamentations"
     if short == "lev" or short == "leviticus":
         return "Leviticus"
-    if short == "malachi":
+    if short == "malachi" or short == "mal":
         return "Malachi"
     if short == "mark" or short == "mar":
         return "Mark"
@@ -133,6 +133,8 @@ def shorthand(short):
         return "Titus"
     if short == "tob" or short == "tobit": 
         return "Tobit"
+    if short == "wisdom" or short == "wis":
+        return "Wisdom"
     if short == "zechariah" or short == "zec":
         return "Zechariah"
     if short == "zephaniah":

@@ -46,12 +46,12 @@ def main(book_type):
 
 #enter Values and get outputs
             else:
-                Reina_Valera = Book(book_name, verse, "", "", "", "")
-                book = Reina_Valera.format_book()                                                      #add .txt to end of file
-                spanish_bible = Reina_Valera.open_book(book, book_type)                                           #open file in string
-                index = Reina_Valera.create_verse_index()                                              #crate verse index
-                verse_index = Reina_Valera.index_verse(spanish_bible, index[0], index[1])              #index verse
-                Reina_Valera.print_verse(spanish_bible, verse_index[0], verse_index[1], book_type)                #display verse
+                Bible_Ver = Book(book_name, verse, "", "", "", "")
+                book = Bible_Ver.format_book()                                                      #add .txt to end of file
+                spanish_bible = Bible_Ver.open_book(book, book_type)                                           #open file in string
+                index = Bible_Ver.create_verse_index()                                              #crate verse index
+                verse_index = Bible_Ver.index_verse(spanish_bible, index[0], index[1])              #index verse
+                Bible_Ver.print_verse(spanish_bible, verse_index[0], verse_index[1], book_type)                #display verse
 
 
 class Book:
@@ -83,8 +83,8 @@ class Book:
             span_bible = codecs.open(book,"r", encoding = 'utf8') 
             span_bible_book= span_bible.read()
             try:
-                span_bible = open(book,"r")
-                span_bible_book= span_bible.read()
+               span_bible = open(book,"r")
+               span_bible_book= span_bible.read()
             except Exception:
                 input("Book not found press ENTER!")
                 main(book_type)
@@ -133,27 +133,26 @@ class Book:
 ----------------------------------------------------------------------Select Version---------------------------------------------------------------
 this section assign oustide variables of book
 """
-# print("select version")
 version = input("Select Version \n 1 = KJV \n 2 = RSV \n")
 
 if version == "1":
     # print("KJV")
     # input("press Enter")
-    Reina_Valera = Book("", "", 1909, "Cipriano de Valera", "Reina-Valera", "./KJVA")
+    Bible_Ver = Book("", "", 1909, "Cipriano de Valera", "Reina-Valera", "./KJVA")
 elif version == "2":
     # print("RSV")
     # input("Press Enter")
-    Reina_Valera = Book("", "", 0000, "God", "KJV", "./RSV")
+    Bible_Ver = Book("", "", 0000, "God", "KJV", "./RSV")
 
 # original instance assignments
 	# Holy_book = Book("holy Bible", 1, 0000, "God", "KJV", "./b")
-	# Reina_Valera = Book("", "", 1909, "Cipriano de Valera", "Reina-Valera", "./b")
+	# Bible_Ver = Book("", "", 1909, "Cipriano de Valera", "Reina-Valera", "./b")
 
 # instance assignmet with variable names for arguments
-	# Reina_Valera = Book(bookver, vernum, datepub, bibauth, bibtitle, biblocation)
+	# Bible_Ver = Book(bookver, vernum, datepub, bibauth, bibtitle, biblocation)
 
-#print(Reina_Valera)
+#print(Bible_Ver)
 
-dir_loc = Reina_Valera.bookloc
+dir_loc = Bible_Ver.bookloc
 os.chdir(dir_loc)
-main(Reina_Valera.bookloc)
+main(Bible_Ver.bookloc)

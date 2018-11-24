@@ -13,7 +13,7 @@ this portion of code is what opens books by asking user for input for Book (book
 #flag to exit program
 done = False
 
-def main(book_type):
+def Main(book_type):
     global done
     #check exit flag
     if done == True:
@@ -28,12 +28,12 @@ def main(book_type):
 # Enter Book Title/abbreciation
         print("-----"*10 , "Welcome" , "-----"*10)
         book_abrev = input("Please Enter book Name: ") 
-        book_name = abbreviation.shorthand(book_abrev)
+        book_name = abbreviation.shorthand(book_abrev.lower())
 
 #see if user wants to exit program        
         if book_name == 'q':
             done = True
-            main(book_type)
+            Main(book_type)
         else:
 
 #Enter Verse ##
@@ -42,43 +42,47 @@ def main(book_type):
 #see if user wants to exit program
             if verse == 'q':
                 done = True
-                main(book_type)
+                Main(book_type)
 
 #enter Values and get outputs
             else:
                 Bible_Ver = Book(book_name, verse, "", "", "", "")
-                book = Bible_Ver.format_book()                                                      #add .txt to end of file
-                spanish_bible = Bible_Ver.open_book(book, book_type)                                           #open file in string
-                index = Bible_Ver.create_verse_index()                                              #crate verse index
-                verse_index = Bible_Ver.index_verse(spanish_bible, index[0], index[1])              #index verse
+                book = Bible_Ver.Format_Bk()                                                      #add .txt to end of file
+                spanish_bible = Bible_Ver.Open_Bk(book, book_type)                                           #open file in string
+                index = Bible_Ver.Create_Vrs_Idex()                                              #crate verse index
+                verse_index = Bible_Ver.Index_Vrs(spanish_bible, index[0], index[1])              #index verse
                 Bible_Ver.print_verse(spanish_bible, verse_index[0], verse_index[1], book_type)                #display verse
 
 
 class Book:
-	"""
-	-------------------------------------------------------Book Class
+        """
+        -------------------------------------------------------Book Class
 
-	This class contains functaions that sort through scripture for the specific vers that is being searched
+        This class contains functaions that sort through scripture for the specific vers that is being searched
 
-	Example:
+        Example:
         Book.print_verse(spanish_bible, verse_index[0], verse_index[1])"""
-	def __init__(self, book, verse, year, author, version, bookloc):
+
+        def __init__(self, book, verse, year, author, version, bookloc):
             self.book = book
             self.year = year
             self.author = author
             self.verse = verse
             self.bookloc = bookloc
         
-	def format_book(self):
+        def Format_Bk(self):
+            """
+            This takes the txt fromat for book and adds .txt to pull document
+            """
+
             book = self.book+'.txt'
             return book
 
-	def header(self):
-            return "hello World"
-            # print(self.book)
+        def Open_Bk(self, book, book_type):
+            """
+            This function opens a specific book and attempts to return it as a string
+            """
 
-	def open_book(self, book, book_type):
-            #open specific bible book if book does not exist loops main                   
             span_bible = open(book,"r")
             span_bible = codecs.open(book,"r", encoding = 'utf8') 
             span_bible_book= span_bible.read()
@@ -87,13 +91,14 @@ class Book:
                span_bible_book= span_bible.read()
             except Exception:
                 input("Book not found press ENTER!")
-                main(book_type)
-            # os.system('cls')
+                Main(book_type)
             return span_bible_book
 
-	def create_verse_index(self):
-            # os.system('cls')
-            #check if verse exists
+        def Create_Vrs_Idex(self):
+            """
+            This Function checks if verse exists and creates index to allow for calling of specific verses
+            """
+
             try:
                 next_verse = int(self.verse) + 1                     #find start of next verse
                 verse_str = str(self.verse+":")                      #create verse serch index
@@ -102,7 +107,7 @@ class Book:
                 verse = "999999"
             return verse_str, next_verse_str                    #return search indexes
 
-	def index_verse(self, span_bible_book, verse_str, next_verse_str):
+        def Index_Vrs(self, span_bible_book, verse_str, next_verse_str):
             bible_string_len = len(span_bible_book)
             #get verse beginning
             try:
@@ -116,7 +121,7 @@ class Book:
                 verse_end=bible_string_len    
             return verse_start, verse_end
 
-	def print_verse(self, span_bible_book, verse_start, verse_end, book_type):
+        def print_verse(self, span_bible_book, verse_start, verse_end, book_type):
             # os.system('cls')
             print(span_bible_book[verse_start:verse_end])
 
@@ -125,9 +130,12 @@ class Book:
             if answer == 'q':
                 global done
                 done = True
-                main(book_type)
+                Main(book_type)
             else:
-                main(book_type)
+                Main(book_type)
+
+
+
 
 """
 ----------------------------------------------------------------------Select Version---------------------------------------------------------------
@@ -144,15 +152,11 @@ elif version == "2":
     # input("Press Enter")
     Bible_Ver = Book("", "", 0000, "God", "KJV", "./RSV")
 
-# original instance assignments
-	# Holy_book = Book("holy Bible", 1, 0000, "God", "KJV", "./b")
-	# Bible_Ver = Book("", "", 1909, "Cipriano de Valera", "Reina-Valera", "./b")
-
-# instance assignmet with variable names for arguments
-	# Bible_Ver = Book(bookver, vernum, datepub, bibauth, bibtitle, biblocation)
-
 #print(Bible_Ver)
 
+#Change Directroy to location of specified bible
 dir_loc = Bible_Ver.bookloc
 os.chdir(dir_loc)
-main(Bible_Ver.bookloc)
+
+#start Main Functon
+Main(Bible_Ver.bookloc)

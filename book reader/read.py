@@ -19,7 +19,7 @@ def main(booktype):
     if done == True:
         exit()
     else:
-#print Titless
+#print Titles
 #        if booktype == "./KJVA":
 #            titles.kjv()
 #        elif booktype == "./RSV":

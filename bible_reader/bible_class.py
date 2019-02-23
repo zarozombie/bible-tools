@@ -1,9 +1,10 @@
-import titles
-import os
-import abbreviation
-import logging
 import codecs
 import main
+
+# =============== Old Dependancies / Modules / Libraries. Maybe remove them next revision
+#import titles
+#import abbreviation
+#import logging
 
 class Book:
         """
@@ -78,13 +79,10 @@ class Book:
             """
             Print Final Results
             """
-            # os.system('cls')
             print(span_bible_book[verse_start:verse_end])
             answer = input("press any key to continue: or q to quit")
 
             if answer == 'q':
-                global done
-                done = True
-                main.main(booktype)
+                quit()
             else:
                 main.main(booktype)

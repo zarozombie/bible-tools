@@ -1,13 +1,13 @@
-import titles
-import os
+# modules
 import abbreviation
-import logging
-import codecs
 import bible_class
+
+# Modules included but not needed possibally remove next revision
+#import titles
 
 """
 ------------------------------------------------------------------Book Reading algorythm------------------------------------------
-this portion of code is what opens books by asking user for input for Book (book_abrev) and Book Verse (verse) and displays scriptuer by verse
+this portion of code is what opens books by asking user for input for specific Book (book_abrev) and Book Verse (verse) and displays scriptuer by Book and verse
 """
 
 #flag to exit program
@@ -15,32 +15,29 @@ done = False
 
 def main(book_loc):
     global done
-    #check exit flag
     if done == True:
         exit()
     else:
-#print Titles
-#        if book_loc == "./KJVA":
-#            titles.kjv()
-#        elif book_loc == "./RSV":
-#            titles.rsv()                                                                                  #disply options
 
-# Enter Book Title/abbreciation
+
+#  ==============  print Titles - Needs revision to print Books in a better format ==============
+#        if book_loc == "./KJVA":
+#             titles.kjv()
+#        elif book_loc == "./RSV":
+#             titles.rsv()
+
+# Enter Book and verse and return Book Verse
         print("-----"*10 , "Welcome" , "-----"*10)
         book_abrev = input("Please Enter book Name: ") 
-        book_name = abbreviation.shorthand(book_abrev.lower())
-
-        if book_name == 'q':
+        if book_abrev == 'q':
             done = True
             main(book_loc)
         else:
+            book_name = abbreviation.shorthand(book_abrev.lower())
             verse_inpt = input("Please Enter Verse Number: ")
-
             if verse_inpt == 'q':
                 done = True
                 main(book_loc)
-
-#enter Values and get outputs
             else:
                 bible_ver = bible_class.Book(book_name, verse_inpt, "", "", "", "")
                 book_txt = bible_ver.format_bk()                                                      #add .txt to end of file

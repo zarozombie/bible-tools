@@ -17,9 +17,10 @@ class Book:
 
         def __init__(self, book, verse, year, author, version, bookloc):
             self.book = book
+            self.verse = verse
             self.year = year
             self.author = author
-            self.verse = verse
+            self.version = version
             self.bookloc = bookloc
         
         def format_bk(self):
@@ -33,46 +34,48 @@ class Book:
             """
             This function opens a specific book and attempts to return it as a string
             """
-            span_bible = open(book,"r")
-            span_bible = codecs.open(book,"r", encoding = 'utf8') 
-            span_bible_book= span_bible.read()
+            open_bible = open(book,"r")
+            open_bible = codecs.open(book,"r", encoding = 'utf8') 
+            read_bible= open_bible.read()
 
             try:
-               span_bible = open(book,"r")
-               span_bible_book= span_bible.read()
+               open_bible = open(book,"r")
+               read_bible = open_bible.read()
             except Exception:
                 input("Book not found press ENTER!")
                 main.main(booktype)
-            return span_bible_book
+            return read_bible
 
         def create_vrs_idex(self):
             """
-            This Function checks if verse exists and creates index to allow for calling of specific verses
+            This Function formats verse string and next verse string (i.e if input + "22" | verse_str will equal 22: | next_verse_str will equal 23: )
             """
-            try:
-                next_verse = int(self.verse) + 1                     #find start of next verse
-                verse_str = str(self.verse+":")                      #create verse serch index
-                next_verse_str = str(str(next_verse) + ":")     #create verse search index of nex verse
-            except Exception:
-                verse = "999999"
+            next_verse = int(self.verse) + 1                     #find start of next verse
+            verse_str = str(self.verse + ":")                      #create verse serch index
+            next_verse_str = str(str(next_verse) + ":")     #create verse search index of nex verse
+            
+            #########################need to create way to have verse input with x:x be used (i.e 32:11) also support for Book X:X (i.e gen 32:11)
+                #next_verse_str = str(str(next_verse))     #create verse search index of nex verse
+            
+
             return verse_str, next_verse_str                    #return search indexes
 
-        def index_vrs(self, span_bible_book, verse_str, next_verse_str):
+        def index_vrs(self, bible_book, verse_str, next_verse_str):
             """
-            generate index start and index end
+            generate index start and index end for verse str
             """
-            bible_string_len = len(span_bible_book)
+            bible_string_len = len(bible_book)
 
             #get verse beginning
             try:
-                verse_start=span_bible_book.index(verse_str)
+                verse_start = bible_book.index(verse_str)
             except Exception:
-                verse_start=0
+                verse_start = 0
             #get verse end
             try:
-                verse_end=span_bible_book.index(next_verse_str)
+                verse_end = bible_book.index(next_verse_str)
             except Exception:
-                verse_end=bible_string_len    
+                verse_end = bible_string_len    
             return verse_start, verse_end
 
         def print_verse(self, span_bible_book, verse_start, verse_end, booktype):

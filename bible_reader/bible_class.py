@@ -34,9 +34,9 @@ class Book:
             """
             This function opens a specific book and attempts to return it as a string
             """
-            open_bible = open(book,"r")
-            open_bible = codecs.open(book,"r", encoding = 'utf8') 
-            read_bible= open_bible.read()
+#            open_bible = open(book,"r")
+#            open_bible = codecs.open(book,"r", encoding = 'utf8') 
+#            read_bible= open_bible.read()
 
             try:
                open_bible = open(book,"r")

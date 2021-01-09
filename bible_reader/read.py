@@ -8,7 +8,6 @@ import main
 #Modules included but not needed possibally remove next revision
 #import titles
 #import abbreviation
-
 """
 ----------------------------------------------------------------------Select Version---------------------------------------------------------------
 this section determines a specific bible version and starts main module

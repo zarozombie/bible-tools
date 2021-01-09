@@ -2,9 +2,6 @@
 import abbreviation
 import bible_class
 
-# Modules included but not needed possibally remove next revision
-#import titles
-
 """
 ------------------------------------------------------------------Book Reading algorythm------------------------------------------
 this portion of code is what opens books by asking user for input for specific Book (book_abrev) and Book Verse (verse) and displays scriptuer by Book and verse

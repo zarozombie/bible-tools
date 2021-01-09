@@ -141,11 +141,3 @@ def shorthand(short):
         return "Zephaniah"
     else:
         return "book or abrev not found!"
-
-
-# x = "zephaniah"
-
-# ans = shorthand(x.lower())
-# ans = shorthand("rev")
-# print(ans)
-# print("gen")

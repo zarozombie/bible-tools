@@ -1,5 +1,4 @@
 import codecs
-import main
 
 """
 This is to Describe the Module

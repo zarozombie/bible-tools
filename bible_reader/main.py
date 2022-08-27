@@ -1,6 +1,7 @@
 # modules
 import abbreviation
-import bible_class
+from bible_class import Book
+import os
 
 # Modules included but not needed possibally remove next revision
 #import titles
@@ -9,6 +10,20 @@ import bible_class
 ------------------------------------------------------------------Book Reading algorythm------------------------------------------
 this portion of code is what opens books by asking user for input for specific Book (book_abrev) and Book Verse (verse) and displays scriptuer by Book and verse
 """
+
+bible_version = input("\nSelect Version \n 1 = KJV \n 2 = RSV \n\n:")
+
+if bible_version == "1":
+    bible_ver = Book(
+        "", "", 1909, "Cipriano de Valera", "Reina-Valera", "./KJVA")
+elif bible_version == "2":
+    bible_ver = Book("", "", 0000, "God", "KJV", "./RSV")
+elif bible_version == "q":
+    quit()
+
+dir_loc = bible_ver.bookloc
+os.chdir(dir_loc)
+
 
 # flag to exit program
 done = False
@@ -31,6 +46,13 @@ def main(bible_ver):
             if verse_inpt == 'q':
                 done = True
                 main(bible_ver)
+
+            else:
+                ''' Legacy Code for bible_ver class update
+                bible_ver = bible_class.Book(
+                    book_name, verse_inpt, "", "", "", "")
+                '''
+                """    
             if type(verse_inpt) == type("is string"):
                 verse_string = verse_inpt.split(":")
                 if len(verse_string) < 1:
@@ -39,12 +61,7 @@ def main(bible_ver):
                     print(verse_string)
                 print("not a verse!")
                 main(bible_ver)
-
-            else:
-                ''' Legacy Code for bible_ver class update
-                bible_ver = bible_class.Book(
-                    book_name, verse_inpt, "", "", "", "")
-                '''
+                """
                 bible_ver.book = book_name
                 bible_ver.verse = verse_inpt
                 bookAddTxt = bible_ver.book+'.txt'
@@ -56,3 +73,6 @@ def main(bible_ver):
                 print(verse_index[2][0], "\n")
                 bible_ver.print_verse(
                     bible_str, verse_index[0], verse_index[1], bible_ver.bookloc)  # display verse
+
+
+main(bible_ver)

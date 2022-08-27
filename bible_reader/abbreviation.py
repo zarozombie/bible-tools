@@ -1,18 +1,18 @@
-#abbreviation
+# abbreviation
 
 def shorthand(short):
-    if short == "isa"    or short == "isaiah":
-        return"Isaiah"
+    if short == "isa" or short == "isaiah":
+        return "Isaiah"
     if short == "gen" or short == "genesis":
-        return"Genesis"
+        return "Genesis"
     elif short == "luk" or short == "luke":
         return "Luke"
     if short == "mat" or short == "matt" or short == "matthew":
         return "Matthew"
     if short == "1chr" or short == "1 chronicles":
-        return"1 Chronicles"
-    if short == "1cor" or short == "1 co" or short == "1co" or short == "1 corinthians" :
-        return"1 Corinthians"
+        return "1 Chronicles"
+    if short == "1cor" or short == "1 co" or short == "1co" or short == "1 corinthians":
+        return "1 Corinthians"
     if short == "1 joh" or short == "1 john" or short == "1jn" or short == "1 jn":
         return "1 John"
     if short == "1ki" or short == "1 kings":
@@ -20,15 +20,15 @@ def shorthand(short):
     if short == "1 pe" or short == "1pe" or short == "1 peter":
         return "1 Peter"
     if short == "1 samuel" or short == "1sa" or short == "1 sa":
-        return"1 Samuel"
+        return "1 Samuel"
     if short == "1 thessalonians":
         return "1 Thessalonians"
     if short == "1 timothy":
         return "1 Timothy"
     if short == "2 chronicles" or short == "2ch":
-        return"2 Chronicles"
+        return "2 Chronicles"
     if short == "2 corinthians" or short == "2co":
-        return"2 Corinthians"
+        return "2 Corinthians"
     if short == "2 john" or short == "2jn" or short == "2 jn":
         return "2 John"
     if short == "2 kings":
@@ -36,7 +36,7 @@ def shorthand(short):
     if short == "2 peter":
         return "2 Peter"
     if short == "2 sam" or short == "2 samuel" or short == "2sam" or short == "2sa" or short == "2 sa":
-        return "2 Samuel"        
+        return "2 Samuel"
     if short == "2 thessalonians" or short == "2th" or short == "2 th":
         return "2 Thessalonians"
     if short == "2 ti" or short == "2 timothy":
@@ -44,7 +44,7 @@ def shorthand(short):
     if short == "3 john":
         return "3 John"
     if short == "act" or short == "acts":
-        return "Acts"        
+        return "Acts"
     if short == "amos":
         return "Amos"
     if short == "colossians":
@@ -124,14 +124,14 @@ def shorthand(short):
     if short == "romans" or short == "rom":
         return "Romans"
     if short == "ruth":
-        return "Ruth"    
+        return "Ruth"
     if short == "sirach" or short == "sir":
         return "Sirach"
     if short == "song" or short == "song of solomon" or short == "son":
         return "Song of Solomon"
     if short == "tit" or short == "titus":
         return "Titus"
-    if short == "tob" or short == "tobit": 
+    if short == "tob" or short == "tobit":
         return "Tobit"
     if short == "wisdom" or short == "wis":
         return "Wisdom"

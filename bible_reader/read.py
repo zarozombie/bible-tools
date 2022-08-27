@@ -2,7 +2,7 @@ import os
 import bible_class
 import main
 
-bible_version = input("\nSelect Version \n 1 = KJV \n 2 = RSV \n")
+bible_version = input("\nSelect Version \n 1 = KJV \n 2 = RSV \n\n:")
 
 if bible_version == "1":
     bible_ver = bible_class.Book(
@@ -15,4 +15,4 @@ elif bible_version == "q":
 dir_loc = bible_ver.bookloc
 os.chdir(dir_loc)
 
-main.main(bible_ver.bookloc, bible_ver)
+main.main(bible_ver)
